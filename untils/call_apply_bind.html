@@ -9,7 +9,10 @@
     const obj = {m: 1}
     fn.call(obj,2,3)
     fn.apply(obj,[2,3])          
-          
+    fn.bind(obj)(2,3)
+    fn.bind(obj,4)(2,3)
+    fn.bind(obj,4,5)(2,3)
+    
 </script>    
 </body>
 </html>
