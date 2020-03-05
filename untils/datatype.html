@@ -1,7 +1,7 @@
 <html>
 <head></head>   
 <body>
-<script>
+<script >
     /*
     String  字符串
         -- 单引号和双引号都可以
@@ -9,17 +9,42 @@
         -- \ 作为转义字符
             \"  表示"
             \n  换行
+
     Number  数值
         -- 包括整数和浮点数（小数）
-        -- 
+        --  typeof 变量 //检查一个变量的数据类型
+        --  Numher.MAX_VALUE  //表示数字的最大值
+            1.7976931348623157e+308
+        --  如果使用Number表示的数字超过最大值，则会返回一个 Infinity正无穷（-Infinity负无穷）
+            typeof Infinity //返回Number
+        --  NaN 是一个特殊数字，表示Not A Number
+            typeof NaN  //返回Number
+        --  Numher.MIN_VALUE  //表示数字大于0的最小值 5e-324
+        -- js中整数的运算基本可以保证精确
+        -- js中运行浮点元素，可能得到一个不确定的结果
+            
+            
     Boolean  布尔值
     Null  空值
     Undefined  未定义
     Object  对象
 
+
     基本数据类型：String Number Boolean Null Undefined
     引用数据类型：Object
     */
+   var a = 123;
+   var b ="hello";
+   console.log(typeof a)
+   console.log(typeof b)
+   console.log(Number.MAX_VALUE)
+   console.log(Number.MIN_VALUE)
+   console.log(2 * Number.MAX_VALUE)
+   console.log(Infinity)
+   console.log(typeof Infinity)
+
+
+
 </script>    
 </body>
 </html>
