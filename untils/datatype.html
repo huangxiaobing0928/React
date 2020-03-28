@@ -24,9 +24,22 @@
         -- js中运行浮点元素，可能得到一个不确定的结果
             
             
-    Boolean  布尔值
+    Boolean  布尔值   
+        布尔值只有两个,主要用来做逻辑判断
+        true
+        false
+        使用typeof 检查一个布尔值是，会返回boolean
+        
     Null  空值
+        Null类型的值只有一个，就是null
+        null专门用来表示空对象
+        使用typeof检查一个null值时，会返回object
+
     Undefined  未定义
+        Undefined类型的值只有一个，就是undefined
+        当申明一个变量，并不给他赋值时，他的值就是undefined
+        使用typeof检查一个Undefined值时，会返回undefined
+
     Object  对象
 
 
@@ -43,6 +56,43 @@
    console.log(Infinity)
    console.log(typeof Infinity)
 
+   var bool = true;
+   console.log(bool)
+   console.log(typeof bool)
+
+   var n = null;
+   console.log(n)
+   console.log(typeof n)
+   var m;
+   console.log(m)
+   console.log(typeof m)
+
+    /*
+    强制类型转换
+        — 指将一个数据类型强制转换成其他的数据类型
+        — 类型转换主要指将其他的数据类型转换成：String Number Boolean
+    
+    将其他的数据类型转换成String
+    方式一：调用被转换数据类型的toString()方法   
+            该方法不会影响到原变量，他会将转换的结果返回
+            但是注意：null和undefined这两个值没有toString方法，如果调用他们的方法，会报错。
+    方式二：调用String()函数，并将被转换的数据作为参数传递给函数
+            使用String()函数做强制数据转换时，
+                对于Number和Boolean实际上就是调用的toString()方法
+                但是对于Null和Undefined这两个值没有toString()方法
+                    它会直接将null转换成""null"，将undefined转换成"undefined"
+    */
+
+    var f = 123;
+    f = f.toString();
+    console.log(typeof f);
+    console.log(f);
+
+    var q = null;
+    q = String(q);
+    console.log(typeof q);
+    console.log(q);
+    
 
 
 </script>    
