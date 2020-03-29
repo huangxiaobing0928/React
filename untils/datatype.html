@@ -71,7 +71,9 @@
     强制类型转换
         — 指将一个数据类型强制转换成其他的数据类型
         — 类型转换主要指将其他的数据类型转换成：String Number Boolean
-    
+    */
+
+    /*
     将其他的数据类型转换成String
     方式一：调用被转换数据类型的toString()方法   
             该方法不会影响到原变量，他会将转换的结果返回
@@ -80,9 +82,8 @@
             使用String()函数做强制数据转换时，
                 对于Number和Boolean实际上就是调用的toString()方法
                 但是对于Null和Undefined这两个值没有toString()方法
-                    它会直接将null转换成""null"，将undefined转换成"undefined"
-    */
-
+                    它会直接将null转换成""null"，将undefined转换成"undefined" 
+    */   
     var f = 123;
     f = f.toString();
     console.log(typeof f);
@@ -92,9 +93,98 @@
     q = String(q);
     console.log(typeof q);
     console.log(q);
+
+    /*
+    将其他数据类型转换成Number
+    方式一：使用Number()函数
+        -- 字符串转换成数字
+            1.如果是纯数字的字符串，则直接将其转换成数字
+            2.如果字符串中有非数字的内容，则转换成NaN
+            3.如果字符串是一个空串或者是一个全是空格的字符串，则转换成0
+        -- 布尔值转换成数字
+            true 转成 1 
+            false 转成 0 
+        -- null转换成数字  0
+        -- undefined转换成数字 NaN
+    方式二：这种方式只能用来对付字符串
+        -- parseInt() 把一个字符串转换成一个整数
+            它是将一个字符串中有效的整数内容取出来，然后转换成Number
+
+        -- parseFloat() 把一个字符串转换成一个浮点数
+            作用和parseInt()类似，不同的是他了一获得有效的小数
+
+        -- 如果对非String使用parseInt()或parseFloat()，他会先将其转换成String然后再操作
+    */
+    var p = "123";
+    p = Number(p);
+    console.log(typeof p);
+    console.log(p);
+    var p = "abc";
+    p = Number(p);
+    console.log(typeof p);
+    console.log(p);
+    var p = "";
+    p = Number(p);
+    console.log(typeof p);
+    console.log(p);
+    var p = "    ";
+    p = Number(p);
+    console.log(typeof p);
+    console.log(p);
+    var p = undefined;
+    p = Number(p);
+    console.log(typeof p);
+    console.log(p);
+    var p = "123.56px";
+    p1 = parseInt(p);
+    p2 = parseFloat(p)
+    console.log(typeof p1);
+    console.log(p1);
+    console.log(typeof p2);
+    console.log(p2); 
+    var p = true;
+    p = parseInt(p);      // -- 如果对非String使用parseInt()或parseFloat()，他会先将其转换成String然后再操作
+    console.log(typeof p);
+    console.log(p);
+
+    /*
+    其他进制数据的转换
+    -- 在js中，如果需要表示16进制的数字，则需要以0x开头
+        如果需要表示8进制的数字，则需要以0开头
+        如果需要表示2进制的数字，则需要以0b开头
+    */
+    //16进制
+    var t = 0x10;
+    console.log(t);
+    var t = 0xff;
+    console.log(t);
+    var t = 0xCafe;
+    console.log(t);
+    //8进制
+    var t = 070;
+    console.log(t);
+    //2进制     不常用，有些浏览器不支持
+    //var t = 0b10;  
+    //console.log(t);
+
+    //像“070”这种字符串，有些浏览器会当成8进制解析，有些会当成10进制解析
+    //可以在parseInt()中传递一个第二个参数，来指定数字的进制。
+    var t = "070";
+    t = parseInt(t,10);
+    console.log(t);  
     
+    /*
+    将其他数据转换成Boolean
+        使用Boolean()函数
+        -- 数字转布尔，除了0和NaN,其余都是true
+        -- 字符串转布尔，除了空串，其余都是true
+        -- null 转换成false
+        -- undefined 转换成false
+        -- 对象也会转换成true
 
+    */
 
+    
 </script>    
 </body>
 </html>
